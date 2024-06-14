@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .correct{
+      color: #0066FF;
+      }
+      .incorrect{
+        color: #0066FF;
+        text-decoration-line: line-through;
+      }
+      .active::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 1px;
+        opacity: 0;
+        background-color: black;
+        animation: blink 1s ease-in-out infinite;
+      }
+
+      @keyframes blink{
+        50%{
+          opacity: 1;
+        }
+      }
+      
+
+
+    </style>
+   
+
+</head>
+<body class="font-['PT_Sans'] bg-[#F6F6F7] overflow-x-hidden">
+  
+  
+    <!-- pre-Nav section -->
+    <div class="mt-2 ps-[155px] text-[12px] md:text-[10px] text-[#96959E] border-b pb-3 hidden lg:flex md:flex">
+        <p>See our other products:</p>
+        <div class="ms-5  hover:text-[#0066FF]">
+            <a href="https://www.chatbot.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbar" class="flex" target="_blank">
+              <ion-icon name="chatbox-outline" class="mx-1 size-5 "></ion-icon>
+              <p class="hover:text-black"><span class="font-bold text-sm">ChatBot</span> - Automate customer service with AI</p>
+            </a>
+        </div>
+        <div class="ms-5  hover:text-[#2FC774]">
+          <a href="https://www.helpdesk.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbar" class="flex" target="_blank">
+            <ion-icon name="checkbox-outline" class="mx-1 size-5 "></ion-icon>
+            <p class="hover:text-black"><span class="font-bold text-sm">HelpDesk</span>  - Support customers by tickets</p>
+          </a>
+      </div>
+      <div class="ms-5  hover:text-[#9146FF]">
+        <a href="https://www.knowledgebase.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbar" class="flex" target="_blank">
+          <ion-icon name="mail-outline" class="mx-1 size-5 "></ion-icon>
+          <p class="hover:text-black"><span class="font-bold text-sm">KnowledgeBase</span> - Guide and educate</p>
+        </a>
+    </div>
+        
+        
+    </div>
+
+
+   <!-- ===NAV section=== -->
+   <nav class=" top-0  bg-white h-20 sticky z-50">
+      
+    <div class="container  justify-between mx-auto  md:flex items-center gap-6 ">
+      <div class="logo pt-2">
+        <img src="images/logo.png" alt="logo " class="w-[200px] lg:ms-3 ">
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center ms-[90%] mt-[-7%]">
+        <button class="mobile-menu-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <title>bars-3-bottom-left</title>
+            <g fill="none">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+
+        <!-- Primary Navigation -->
+        <div class=" md:flex hidden bg-white md:flex-row mt-5 flex-col items-center text-[18px] justify-start md:space-x-1 navigation-menu pb-3 md:pb-0 navigation-menu">
+          <!-- Dropdown Menu -->
+          <div class="relative ">
+            <button class="dropdown-toggle py-2 px-3  flex items-center gap-2 rounded">
+              <span class="pointer-events-none">Products</span>
+              <svg class="w-3 h-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>chevron-down</title>
+                <g fill="none">
+                  <path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute hidden bg-white text-grey-600 shadow rounded-b-lg pb-2 w-48">
+              <a href="#" class="block px-6 py-2 hover:bg-[#F6F6F7] hover:text-black">Benefits</a>
+              <a href="#" class="block px-6 py-2 hover:bg-[#F6F6F7] hover:text-black">Products tour</a>
+              <a href="#" class="block px-6 py-2 hover:bg-[#F6F6F7] hover:text-black">App</a>
+              <a href="#" class="block px-6 py-2 hover:bg-[#F6F6F7] hover:text-black">Features</a>
+              <a href="#" class="block px-6 py-2 hover:bg-[#F6F6F7] hover:text-black">Resources</a>
+            </div>
+          </div>
+          <a href="#" class="py-2 px-3 block  ">Pricing</a>
+          <a href="#" class="py-2 px-3 block">Marketplace</a>
+          <a href="#" class="py-2 px-3 block">Customers</a>
+          <a href="#" class="py-2 px-3 block">Support</a>
+          
+          
+        </div>
+      <a href="tryLiveChat.html"  class="btnTryLiveChat mt-4 hidden md:block lg:me-4  w-[150px] h-[38px] text-center p-1 text-white rounded bg-[#EE0007] hover:bg-[#CF0006] font-bold text-[18px]">
+       Try LiveChat
+      </a>
+    </div>
+  </nav>
+  
+    
+
+  <!-- ===header section=== -->
+  <div class="header  bg-cover bg-center h-screen" 
+  style="background-image: url('images/header-bg.jpg');">
+    <div class=" flex lg:justify-end lg:items-end justify-center mt-7 lg:me-10">
+      <a href="" class="flex border border-black border-sm hover:bg-black hover:text-white py-1 px-3  h-10 rounded">
+        <i class="fa-brands fa-facebook text-2xl pe-3 hover:text-[#4A4A56] " ></i>
+        <p class="text-base mt-1">Continue With Facebook</p>
+      </a>
+      
+  
+      
+    </div>
+    <div class="flex flex-col justify-center items-center mt-10">
+      <p class=" text-gray-500    ">TYPING SPEED TEST</p>
+      <h1 class="font-bold lg:text-7xl text-4xl mt-3 lg:ms-[100px]">Test your typing skills</h1>
+    </div>
+    <div class=" lg:flex  justify-center items-center mt-10 ">
+      <div class="bg-white  lg:mx-0 mx-48 rounded-full shadow text-center border border-4 border-[#FFD000] lg:px-5 lg:py-3 py-2 lg:me-24" id="timer">
+        <h1 class="font-bold lg:text-[30px] text-[26px]" >60</h1>
+        <p class="text-gray-500 mb-3 lg:mb-0 text-sm mb-1">Seconds</p>
+      </div>
+      <!-- --calculation-- -->
+      <div class="flex ms-20 lg:ms-0 mt-10 lg:mt-0 md:ms-72">
+        <div class=" text-center    " id="wpm">
+          <h1 class="font-bold text-[30px] bg-white rounded-3xl shadow-xl px-7 py-3" >0</h1>
+         <p class="text-gray-500 mt-2">words/min</p>
+        </div>
+        <div class=" text-center   ms-10" id="cpm">
+          <h1 class="font-bold text-[30px] bg-white rounded-3xl shadow-xl px-7 py-3" >0</h1>
+          <p class="text-gray-500 mt-2">chars/min</p>
+         </div>
+  
+         <div class="   text-center   ms-10" id="accuracy">
+          <h1 class="font-bold text-[30px] bg-white rounded-3xl shadow-xl px-7 py-3" > 0</h1>
+          <p class="text-gray-500 mt-2">%accuracy</p>
+         </div>
+   
+  
+  
+  
+      </div>
+  
+    </div>
+    <div class="" id="wrapper">
+    <input type="text" id="input-field" class="ms-10 md:ms-0 lg:ms-40 mt-10 z-[-999] absolute opacity-0	">
+    <div class="bg-white   rounded-xl shadow-lg  ms-10 md:ms-0 lg:ms-40 h-fit  lg:mt-20 mt-10 lg:w-[980px] w-[400px] md:w-[850px] relative " id="game">
+     
+      
+      <div type="text" class="lg:text-2xl text-base  px-7 py-4  resize-none rounded-lg border text-black scrollbar-none 	 w-full h-full  outline-none text-black border-none   "
+       id="typing-text" >
+       <p id="p">
+       </p>
+
+      </div>
+      <div class="absolute bg-[#FFD000] hidden lg:block py-1 px-2 rounded font-thin text-gray-600 mt-[-190px] lg:ms-[400px] ms-7 md:ms-40  animate-bounce  " id="startAnimation"> Start typing</div>
+      
+     </div>
+    </div>
+  
+     <!-- ===hidden section=== -->
+     <!-- <div class="mt-40">
+      <div class="flex">
+      <h1>Hide global scores</h1>
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+  
+     </div> -->
+     
+  
+  
+  </div>
+  
+      <!-- ===header  ends section=== -->
+
+<!-- ===section 2 starts=== -->
+<div class="section2  lg:mt-56 mt-[490px]">
+  <div class="flex ms-[40%] text-lg">
+    <h1 class="hover:underline">Show global scores</h1>
+    <i class="fa-solid fa-chevron-down text-base ms-2 mt-1"></i>
+  </div>
+
+  <div class="bg-[#FFD000] mt-7 pt-4 relative h-[700px]">
+    <img src="images/section2-log.png" alt="" class="w-[230px] ms-[30%] lg:ms-[40%]">
+    <div class=" lg:ms-[35%]  lg:w-[500px]  ms-10 mt-10">
+   <p class="font-bold lg:text-[45px] text-[35px] leading-none">How to type faster? Typing speed test for customer support</p>
+  </div>
+
+  
+  </div>
+  <div class="lg:ms-[7%] mt-[-360px] px-7 lg:px-0 absolute">
+    <a href="https://www.youtube.com/watch?v=mmcF-mjtHgo"  target="_blank">
+    <img src="images/youtube-link.png" alt=""  class="w-[1100px]">
+  </a>
+  </div>
+
+</div>
+
+<!-- ===section 2 ends=== -->
+
+<!-- ===section 3 starts=== -->
+<div class="section3  lg:flex lg:mt-[480px] ">
+  <div class="lg:ms-20 ms-7 mt-10 col-6">
+    <h1 class="font-bold lg:ms-10 lg:text-7xl text-4xl">What’s LiveChat?</h1>
+    <p class=" lg:ms-5  mt-4 pb-5 text-xl">Take the LiveChat tour and discover new <br>ways to grow your business and increase <br>
+      customer satisfaction.</p>
+      <a href="tryLiveChat.html"  class="btnTryLiveChat   lg:ms-10  w-[163spx] h-[38px] text-center p-2 text-white rounded bg-black  text-base">
+       Go to LiveChat Tour
+       </a>
+  </div>
+  <!-- --img-- -->
+  <div class="lg:overflow-x-hidden">
+    <img src="images/section3.png" alt="" class="lg:ms-16 w-[560px] h-[100%] mt-10 lg:mt-0">
+  </div>
+</div>
+<!-- ===section 3 ends=== -->
+
+    <!-- ===section 4 starts=== -->
+    <div class="bg-grey-100 mt-16 bg-[#1B1B20] text-white pt-3
+    bg-cover bg-center h-fit  w-full" 
+    style="background-image: url('images/section4-bg3.jpg');">
+      <div class="flex justify-center items-center border-t ">
+        <div class="   mt-7 lg:mt-14 text-white ">
+          <a href="https://www.helpdesk.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbar" class="flex" target="_blank">
+            <div class="">
+            <img src="images/helpDeskIcon.png" alt="logo " class="w-[200px] ms-3">
+          </div>
+            <p class="text-white text-lg font-bold mt-4">Learning Space</p>
+            
+          </a> 
+      </div>
+    
+     
+      </div>
+    
+      <div class="flex flex-col items-center justify-center mt-10 ">
+        <h1 class="lg:text-[45px] text-[30px]">Universe of great insights</h1>
+        <p class=" lg:text-[20px] text-base mt-2">Typing skills? Check. Take the next step and make your online<br> communication outstanding.</p>
+      </div>
+     <!-- ----cards---- -->
+      <div class="cards lg:flex  text-white lg:ms-20 md:ms-7 mt-16 ">
+    
+     <div class="oneCard lg:ms-16 md:ms-7 px-6 lg:px-0 md:px-4">
+      <a href="#" class="block w-full  lg:w-[300px] h-[300px] p-6 bg-[#303037]  rounded-lg shadow ">
+        <i class="fa-solid fa-graduation-cap text-4xl"></i>
+        <h1 class="font-bold text-3xl mt-5">Courses</h1>
+        <p class="mt-5 text-xl">In-depth knowledge<br>that's easy to apply</p>
+        <p class="text-[#00C057] font-bold mt-5 hover:underline text-lg">Check courses <span><i class="fa-solid fa-chevron-right text-sm ms-1"></i></span></p>
+        </a>
+      </div>
+      <div class="oneCard lg:ms-16 md:ms-7 md:mt-7 px-6 lg:px-0 md:px-0 mt-7 lg:mt-0 md:mt-0">
+        <a href="#" class="block  w-full  lg:w-[300px] h-[300px] p-6 bg-[#303037]  rounded-lg shadow ">
+          <i class="fa-solid fa-book text-4xl"></i>
+          <h1 class="font-bold text-3xl mt-5">Guides</h1>
+          <p class="mt-5 text-xl">Quick study with<br>comperhensice one-pagers</p>
+          
+          <p class="text-[#00C057] font-bold mt-5 hover:underline text-lg">Browse guides<span><i class="fa-solid fa-chevron-right text-sm ms-1" ></i></span></p>
+          </a>
+        </div>
+        <div class="oneCard lg:ms-16 md:ms-7 md:mt-5 px-6 lg:px-0 md:px-0 mt-7 lg:mt-0 md:mt-0">
+          <a href="#" class="block  w-full  lg:w-[300px] h-[300px] p-6 bg-[#303037]  rounded-lg shadow ">
+            <i class="fa-regular fa-envelope text-4xl"></i>
+            <h1 class="font-bold text-3xl mt-5">Email Templates</h1>
+            <p class="mt-5 text-xl">Task-oriented cheat sheet</p>
+            <p class="text-[#00C057] font-bold mt-10 text-lg hover:underline ">see templates <span><i class="fa-solid fa-chevron-right text-sm ms-1"></i></span></p>
+            </a>
+          </div>
+    
+      </div>
+      <div class="pb-8 flex items-center justify-center ">
+        <a href="tryLiveChat.html"  class="btnTryLiveChat mt-4  ms-10  w-[160px] h-[38px] text-center py-1 text-white rounded bg-[#00C057] hover:bg-[#00A149] font-bold text-lg ">
+          Visit learning space
+         </a>
+        
+      </div>
+      
+      
+    
+    
+    </div>
+    <!-- ===section 4 ends=== -->
+
+ <!-- ===section 5 starts=== -->
+ <div class="mt-10 lg:flex lg:flex-wrap md:flex md:flex-wrap bg-white pt-2">
+  <div class="onetext  lg:ms-7 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">Who Invented the Qwerty <br>Keyboard?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">Take a deep breath, relax your fingers, and take it <br>
+    slow. You need to be focused and not annoyed <br>when attempting the typing speed test. The best <br>
+    thing you can do to start typing faster is to type <br>more. The more practice you get under your belt,<br>
+     the faster your ‘typing-fu’ will be. It’s all about <br>developing muscle memory. Just make sure you <br>
+     are reinforcing good habits and not ones that will <br>leave your fingers hurting after an intense typing <br>session.</p>
+  </div>
+  <div class="onetext lg:ms-24 md:ms-18 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">What Is the Best 10-Finger <br>Typing Layout?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">Take a deep breath, relax your fingers, and take it <br>
+    slow. You need to be focused and not annoyed <br>when attempting the typing speed test. The best <br>
+    thing you can do to start typing faster is to type <br>more. The more practice you get under your belt,<br>
+     the faster your ‘typing-fu’ will be. It’s all about <br>developing muscle memory. Just make sure you <br>
+     are reinforcing good habits and not ones that will <br>leave your fingers hurting after an intense typing <br>session.</p>
+  </div>
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">How to Improve Your Typing<br> Speed</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">The QWERTY keyboard was invented in 1868 by<br>
+     Christopher Latham Sholes. He also designed<br> the first successful typewriter. The order of the<br>
+      keys was decided by listing the most common<br> letter combinations and making sure that they<br>
+       were not placed next to each other. He did this<br> to avoid problems that often happened when<br>
+        two neighboring keys were pressed <br>consecutively. The QWERTY keyboard is used to<br>
+         this day and is the most widely used keyboard<br> available.</p>
+  </div>
+  <!-- --column two-- -->
+
+  <div class="onetext lg:ms-7 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">Word per Minute (WPM) Typing<br> Test</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">What is the WPM typing test? There are<br>
+     different types of tests for typing. This one is a<br> typing test that expresses your typing skills in<br>
+      words per minute. The more you practice typing,<br> and the more you test your typing speed, the<br> higher your WPM score will be. Some online<br>
+       typing tests and typing test games focus only<br> on WPM typing. The disadvantage of the WPM<br>
+        typing test is that you are only learning how to<br> type fast. WPM typing tests do not show your<br> accuracy.</p>
+  </div>
+
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">How toIs This Really a Free Typing <br>Test You Can Use?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">As the makers of LiveChat, customer service<br>
+     software for businesses, we wanted to provide<br> the community of our customers and live chat<br>
+      agents with a free typing test. This way, they<br> can consistently practice typing and improve<br>
+       their typing skills. We've also made this tool<br> accessible to every visitor of our page. Our tool<br>
+        is a free typing speed test with a WPM score,<br> but it can be also used as a typing speed test<br> for kids.</p>
+  </div>
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">How Can You Upgrade Your<br> Typing Skills?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">Practice typing as much as you can. Type a lot,<br> type tests, and practice typing tests. Improve<br>
+     your words per minute typing results, and test<br> your typing speed often. Our typing speed test<br>
+      will keep track of all typing tests that you’ve<br> taken in the past so you will be able to see the<br>
+       improvements over time. You will be able to see<br> how your speed typing has changed. If you can<br>
+        do a five-minute typing test every day, your<br> typing skills will increase dramatically.</p>
+  </div>
+
+   <!-- --column three-- -->
+
+   <div class="onetext lg:ms-7 mt-10 ms-10 ">
+    <h1 class="font-bold text-2xl">How Are the Words From the<br> Test Chosen?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">We’ve decided to use the 1,000 most common<br>
+     words in the English language. Additionally, we<br> wanted to include words that you can find in our<br>
+      blog articles. You can think of it as a touch of<br> LiveChat’s flavor to make the typing test a bit<br>
+       more interesting. This free typing speed test<br> focuses on typing itself, so words appear<br>
+        randomly. Reading full sentences may influence<br> your typing speed.</p>
+  </div>
+
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">Why Have We Prepared This<br> Typing Test?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">We prepared this free typing test to give you a<br>
+     quick and easy way to test your typing speed.<br> You can use it when practicing your typing skills<br>
+      to get an idea of how well you are progressing.<br> Businesses can use this test to get an idea<br> about the typing skills of potential hires or to<br>
+       help existing employees develop their typing<br> speed. This typing speed test is one of our free<br> tools, just like the UTM Builder or our Privacy<br> Policy Generator.</p>
+  </div>
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">Why Is Typing Speed Important<br> to Everyone?</h1>
+   <p class="mt-2 text-lg lg:text-basetext-gray-500">The faster you type, the faster you will be able to<br>
+     communicate with others. You will be able to<br> save a ton of time on any kind of work that<br>
+      requires typing. At first, it will be a couple of<br> extra minutes that you won’t really notice. Over<br>
+       time, the minutes will turn into hours of saved<br> time that you can spend on other activities.</p>
+  </div>
+
+   <!-- --column four-- -->
+
+   <div class="onetext lg:ms-7 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">What Is the Average Typing<br> Speed?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">The average person types between 38 and 40<br>
+     words per minute (WPM). That translates into<br> between 190 and 200 characters per minute<br>
+      (CPM). However, professional typists type a lot<br> faster, averaging between 65 and 75 WPM.</p>
+  </div>
+
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">What Is CPM and How Can You<br> Calculate It?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">The CPM stands for the number of characters<br>
+     you type per minute, including all the mistakes.<br> “Corrected” scores count only correctly typed<br>
+      words. WPM is just the corrected CPM divided<br> by five. This is the de facto international<br> standard.</p>
+  </div>
+  <div class="onetext lg:ms-24 mt-10 ms-10">
+    <h1 class="font-bold text-2xl">How Many Words per Minute Is a<br> Good Score?</h1>
+   <p class="mt-2 text-lg lg:text-base text-gray-500">An average professional typist usually types<br>
+     around 65 to 75 WPM. More advanced positions<br> require 80 to 95 (this is typically the minimum<br>
+      required for dispatch positions and other time-<br>sensitive typing jobs). There are also some<br>
+       advanced typists whose work requires speeds<br> above 120 WPM.</p>
+  </div>
+
+
+</div>
+<!-- ===section 5 ends=== -->
+
+  <!-- ===section 6 starts=== -->
+  <div class="mt-20 lg:flex md:flex bg-cover bg-center h-[670px]" 
+  style="background-image: url('images/section6-BG.png');">
+  <div class="lg:ms-36 lg:mt-36  ms-7 pt-10 lg:pt-0 ">
+  <h1 class="lg:text-5xl lg:ms-0  text-3xl font-bold ">Start your freeLiveChat taril now!</h1>
+  <p class="text-xl mt-5">Delight your customers. Fuel your sales.</p>
+  <div class=" mt-5 flex flex-col pe-10">
+    <input type="email" id="email" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block lg:w-80 w-full h-14 p-2.5 " placeholder="Enter Business Email "required />
+    <a href="tryLiveChat.html"  class="btnTryLiveChat  mt-5  w-full  lg:w-32 h-12 text-center pt-3 text-white rounded bg-[#EE0007] hover:bg-[#CF0006] font-bold text-[18px]">
+      sign up free
+     </a>
+    </div>
+     <div class="flex mt-7 ms-10 lg:ms-0 ">
+      <div class="flex pe-5">
+        <i class="fa-solid fa-check pe-1"></i>
+        <p class="text-sm ">Automation</p>
+      </div>
+      <div class="flex pe-5">
+        <i class="fa-solid fa-check pe-1"></i>
+        <p class="text-sm ">Omnichannel</p>
+      </div>
+      <div class="flex pe-5">
+        
+        <i class="fa-solid fa-check pe-1"></i>
+        <p class="text-sm ">analytic</p>
+      </div>
+     </div>
+    </div>
+  
+  
+  
+  <!-- --img-- -->
+  <div class="  mt-10">
+    <img src="images/section6.png" alt="" class="ms-5 lg:ms-0 lg:w-[900px] h-[100%] w-[450px]">
+  </div>
+  </div>
+  <!-- ===section 6 ends=== -->
+
+
+  <!-- ===footer starts=== -->
+  <div class=" bg-[#F6F6F7]">
+    <div class=" lg:ms-20 pt-16">
+      <h1 class="font-bold ms-[30%] lg:text-3xl text-2xl">Discover our other products</h1>
+      <div class=" lg:ms-40 ms-10 mt-10  lg:flex  ">
+        <a href="https://www.chatbot.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbarfooter">
+        <div class="flex ">
+          
+          <img src="images/icons/chatBot.png" alt="" class="size-14 bg-withe shadow-lg  rounded mt-2">
+          <div class="text-base hover:underline ms-5">
+            <h1 class="font-bold">ChatBot</h1>
+            <p class="text-gray-600">
+              Automate customers <br>service with AI</p>
+          </div>
+         
+        </div>
+      </a>
+      <a href="https://www.helpdesk.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbarfooter">
+        <div class="flex lg:ms-20 mt-10 lg:mt-0">
+          
+          <img src="images/icons/helpDesk.png" alt="" class="size-14 bg-withe shadow-lg  rounded mt-2">
+          <div class="text-base hover:underline ms-5">
+            <h1 class="font-bold">HelpDesk</h1>
+            <p class="text-gray-600">          
+              Support customers by tickets</p>
+          </div>
+        
+        </div>
+      </a>
+  
+      <a href="https://www.knowledgebase.com/?utm_source=livechat.com&utm_medium=referral&utm_campaign=productbarfooter">
+        <div class="flex lg:ms-20 mt-10 lg:mt-0">
+          
+          <img src="images/icons/knowledgeBase.png" alt="" class="size-14 bg-withe shadow-lg  rounded mt-2">
+          <div class="text-base hover:underline ms-5">
+            <h1 class="font-bold">KnowledgeBase</h1>
+            <p class="text-gray-600">
+              Guide and educate customers</p>
+          </div>
+        
+        </div>
+      </a>
+  
+        
+      </div>
+    </div>
+  
+  
+    <div class="mt-28">
+      <div class="grid grid-cols-2 gap-2 ms-2 lg:flex">
+        <h1 class="font-bold  	ms-5">Get LiveChat App</h1>
+        <div class="flex lg:ms-28 ">
+          <i class="fa-solid fa-globe text-lg"></i>
+          <p class="hover:underline text-base text-gray-500 font-thin ps-2">Web Browser</p>
+        </div>
+        <div class="flex lg:ms-28 mt-3 lg:mt-0 ms-5">
+          <i class="fa-brands fa-windows text-lg" ></i>
+          <p class="hover:underline text-base text-gray-500 font-normal ps-2">Windwos</p>
+        </div>
+        <div class="flex lg:ms-28 mt-3 lg:mt-0">
+          <i class="fa-solid fa-robot text-lg"></i>
+          <p class="hover:underline text-base text-gray-500 font-normal ps-2">MacOS</p>
+        </div>
+        <div class="flex lg:ms-28 mt-3 lg:mt-0 ms-5">
+          <i class="fa-brands fa-apple text-lg"></i>
+          <p class="hover:underline text-base text-gray-500 font-normal ps-2">Ipad| Iphone</p>
+        </div>
+        <div class="flex lg:ms-28 mt-3 lg:mt-0">
+          <i class="fa-brands fa-android text-lg"></i>
+          <p class="hover:underline text-base text-gray-500 font-normal ps-2">Android</p>
+        </div>
+        
+      </div>
+  
+      <div class="flex"></div>
+    </div>
+  
+    <div class="text-base mt-16 grid grid-cols-2 gap-2 ms-2 lg:flex">
+      <div class="ms-5">
+        <ul>
+          <li class="font-bold pb-7">Product</li>
+          <li class="text-gray-600 pb-7 hover:underline">Pricing</li>
+          <li class="text-gray-600 pb-7 hover:underline">LiveChat Benefits</li>
+          <li class="text-gray-600 pb-7 hover:underline">Tour</li>
+          <li class="text-gray-600 pb-7 hover:underline">Features</li>
+          <li class="text-gray-600 pb-7 hover:underline">Use case</li>
+          <li class="text-gray-600 pb-7 hover:underline">App</li>
+          <li class="text-gray-600 pb-7 hover:underline">Marketplace</li>
+          <li class="text-gray-600 pb-7 hover:underline">News</li>
+          
+         
+        </ul>
+  
+      </div>
+      <div class="lg:ms-24">
+        <ul>
+          <li class="font-bold pb-7">Customers</li>
+          <li class="text-gray-600 pb-7 hover:underline">Customers</li>
+          <li class="text-gray-600 pb-7 hover:underline">Case Studies</li>
+          <li class="text-gray-600 pb-7 hover:underline">Industries</li>  
+        </ul>
+  
+      </div>
+      <div class="ms-5 lg:ms-24">
+        <ul>
+          <li class="font-bold pb-7">Resources</li>
+          <li class="text-gray-600 pb-7 hover:underline">Success by LiveChat</li>
+          <li class="text-gray-600 pb-7 hover:underline">Customers Service Guide</li>
+          <li class="text-gray-600 pb-7 hover:underline">Newsletter</li>
+          <li class="text-gray-600 pb-7 hover:underline">Reports</li>
+          <li class="text-gray-600 pb-7 hover:underline">Benchmark</li>
+          <li class="text-gray-600 pb-7 hover:underline">Typing Speed Test</li>
+          <li class="text-gray-600 pb-7 hover:underline">UTM Builder</li>
+          <li class="text-gray-600 pb-7 hover:underline">Customer Service Report</li>
+          
+         
+        </ul>
+  
+      </div>
+      <div class="lg:ms-24">
+        <ul>
+          <li class="font-bold pb-7">Support</li>
+          <li class="text-gray-600 pb-7 hover:underline">Help Center</li>
+          <li class="text-gray-600 pb-7 hover:underline">Webinars</li>
+          <li class="text-gray-600 pb-7 hover:underline">Partners Marketplace</li>
+          <li class="text-gray-600 pb-7 hover:underline">Professional Service</li>
+          <li class="text-gray-600 pb-7 hover:underline">API & Developers</li>
+          <li class="text-gray-600 pb-7 hover:underline">System Status</li>
+  
+         
+        </ul>
+  
+      </div>
+      <div class="ms-5 lg:ms-24">
+        <ul>
+          <li class="font-bold pb-7">Company</li>
+          <li class="text-gray-600 pb-7 hover:underline">Contact</li>
+          <li class="text-gray-600 pb-7 hover:underline">Investor Relations</li>
+          <li class="text-gray-600 pb-7 hover:underline">Team</li>
+          <li class="text-gray-600 pb-7 hover:underline">Partner Program</li>
+          <li class="text-gray-600 pb-7 hover:underline">Press</li>
+          <li class="text-gray-600 pb-7 hover:underline">Careers</li>
+          
+          
+         
+        </ul>
+  
+      </div>
+      <div class="lg:ms-24">
+        <ul>
+          <li class="font-bold pb-7">Legal</li>
+          <li class="text-gray-600 pb-7 hover:underline">Terms of Use</li>
+          <li class="text-gray-600 pb-7 hover:underline">Privacy Policy</li>
+          <li class="text-gray-600 pb-7 hover:underline">Tour</li>
+          <li class="text-gray-600 pb-7 hover:underline">Security</li>
+          <li class="text-gray-600 pb-7 hover:underline">GDPR</li>
+         
+        </ul>
+  
+      </div>
+      
+      
+  
+    </div>
+  
+  
+  
+  
+    <div class=" lg:flex  mt-20  border-b pb-5 ">
+      <div class="flex">
+      <p class="font-bold ms-3 text-lg">Start your free trail</p>
+      <a href="tryLiveChat.html"  class="btnTryLiveChat   ms-7  w-[120px] h-[38px] text-center pt-2 text-white rounded bg-[#EE0007] hover:bg-[#CF0006] font-bold text-base">
+        Sign up free
+       </a>
+      </div>
+  
+       <div class="contuctUs flex mt-5 ms-3 lg:mt-0 lg:ms-[600px]">
+        <i class="fa-brands fa-twitter text-2xl pe-5 hover:text-[#4A4A56] " title="twitter"></i>
+        <i class="fa-brands fa-linkedin text-2xl pe-5 hover:text-[#4A4A56] " title="linkedin" ></i>
+        <i class="fa-brands fa-facebook text-2xl pe-5 hover:text-[#4A4A56] " title="facebook" ></i>
+        <i class="fa-brands fa-youtube text-2xl pe-5 hover:text-[#4A4A56] " title="youtube"></i>
+        <i class="fa-brands fa-instagram text-2xl pe-5 hover:text-[#4A4A56] " title="instagram"></i>
+        <i class="fa-brands fa-product-hunt text-2xl pe-5 hover:text-[#4A4A56] " title="producthunt"></i>
+        <i class="fa-brands fa-dribbble text-2xl pe-5 hover:text-[#4A4A56] " title="dribble"></i>
+        <i class="fa-brands fa-github text-2xl pe-5 hover:text-[#4A4A56] " title="github"></i>
+       </div>
+  
+  
+    </div>
+  
+  
+  
+  
+    <div class="text-gray-500 ms-5 text-[13px] mt-10 ">
+      <p>Copyright © 2024 Text, Inc. All rights reserved</p>
+      <p class="mt-5">We use cookies and similar technologies to enhance your interactions with our website and Services, including when you reach out to us on chat. This comprises traffic analysis, delivering personalized content, and<br>
+         supporting our marketing efforts. By accessing our website, interacting with our Services, you agree to let us and our partners employ cookies and related technologies on your computer or devices. <a href="" class="font-bold text-black">Click the Cookies</a> <br>
+         Policy to check how you can control the use of cookies through your device. To understand how we process your data, including through cookies, and interactions with us, please read our <a href="" class="font-bold text-black">Privacy Policy.</a></p>
+    </div>
+  
+    
+   
+  
+  </div>
+  
+  <!-- ===footer ends=== -->
+  
+  
+
+<!-- ---result module-- -->
+<div id="overlay" class=" hidden lg:top-[250px]  top-[1px] h-full lg:h-0 fixed bg-[rgba(0, 0, 0, 0.5)] flex justify-center items-center z-50 ms-[50%] mt-[7%]">
+
+ <div class=" w-[600px]  bg-[#F6F6F7]   [box-shadow:0_0_15px_rgba(0,_0,_0,_0.3)] rounded-[8px] border pb-7   absolute p-[20px] m-[0 20px]    " id="resultDiv">
+  <div class="cancel flex justify-end items-end">
+    <i class="fa-solid fa-x text-[20px]"></i>
+  </div>
+  <div class="flex border-b pt-4 pb-7 ">
+    <div class="img ms-2">
+      <img src="" alt="" class="w-[200px]" id="resultImage">
+    </div>
+    <div class="ms-16">
+      <h1 class="font-bold text-[31px]" id="resultHeading">You're a Turtle.</h1>
+      <p class="text-gray-500 text-lg" > Well... You type with the speed of<br>
+         <span class="bg-[#FFD000] font-bold text-black reswpm">1 WPM </span> (<span class="rescpm">0 CPM</span>). Your accuracy<br> was <span class="font-bold resaccuracy text-black">100 %</span>. Exercie makes perfection!</p>
+      <p class="mt-2 font-bold">Share yout score</p>
+      <div class="share mt-3 text-white">
+        <i class="fa-brands fa-facebook-f text-center text-xl px-4 py-2 rounded-full  bg-[#257EED] " title="facebook" ></i>
+        <i class="fa-brands fa-linkedin-in text-center text-lg px-4 py-2.5 rounded-full bg-[#0077B5] ms-2 " title="linkedin" ></i>
+        <i class="fa-brands fa-twitter text-center text-xl px-3 py-2 rounded-full bg-[#4AA0EC] ms-2" title="twitter" ></i>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 flex flex-col justify-center items-center font-bold ">
+   <p>Save score on your organization's 
+    <a href="" class="text-blue-500 hover:underline">leaderboard</a>
+   </p>
+   <div class="flex">
+    <a href="" id="tryAgainBtn"  class="btnTryAgin mt-4 hidden md:block lg:me-4  w-[120px] h-[44px] text-center pt-2 text-black rounded border border-black font-bold text-base hover:bg-black hover:text-white">
+      Try again
+     </a>
+     <a href="tryLiveChat.html"  class="btnTryLiveChat mt-4 hidden md:block lg:me-4  w-[80px] h-[44px] text-center pt-2 text-white rounded bg-[#0066FF] hover:bg-[#0052CC] font-bold text-[18px]">
+      Save
+     </a>
+   </div>
+  </div>
+ </div> 
+ </div>
+
+
+   <!-- ====icons==== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- <script src="js/paragraphs.js"></script> -->
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
